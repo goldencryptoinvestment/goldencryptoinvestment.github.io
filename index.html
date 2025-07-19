@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Golden Crypto Investment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --gold-primary: #FFD700;
+            --gold-secondary: #D4AF37;
+            --gold-dark: #996515;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --text-light: #f5f5f5;
+            --text-gold: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .gold-particle {
+            position: absolute;
+            background-color: var(--gold-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--gold-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .main-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold-primary);
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight {
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--darker-bg);
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-button:active {
+            transform: translateY(1px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid var(--gold-dark);
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--gold-primary);
+        }
+        
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(153, 101, 21, 0.2);
+        }
+        
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gold Particles Background -->
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <header class="animate__animated animate__fadeIn">
+            <div class="logo">Golden Crypto Investment</div>
+            <div class="tagline">Where Tradition Meets Innovation</div>
+        </header>
+        
+        <main class="main-content animate__animated animate__fadeIn animate__delay-1s">
+            <h1>Secure Your Future With <span class="highlight">Gold-Backed</span> Crypto Investments</h1>
+            
+            <p>Welcome to Golden Crypto Investment, where the timeless value of gold meets the revolutionary potential of blockchain technology. We offer a bridge between traditional wealth preservation and the digital asset revolution.</p>
+            
+            <p>Our platform combines the stability of physical gold reserves with the flexibility of cryptocurrency, providing you with a <span class="highlight">secure</span>, <span class="highlight">transparent</span>, and <span class="highlight">innovative</span> way to grow your wealth.</p>
+            
+            <a href="#enter-site" class="cta-button animate__animated animate__pulse animate__infinite">Enter Platform</a>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Asset-Backed Security</h3>
+                    <p class="feature-desc">Every digital token is backed by physical gold stored in high-security vaults, audited quarterly by independent agencies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Growth Potential</h3>
+                    <p class="feature-desc">Benefit from both gold's stability and cryptocurrency's growth potential with our hybrid investment model.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Military-Grade Security</h3>
+                    <p class="feature-desc">Our platform uses bank-level encryption and multi-signature wallets to protect your investments.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="security-badges animate__animated animate__fadeIn animate__delay-2s">
+        <div class="badge">
+            <span>🔐</span> <span>256-bit Encryption</span>
+        </div>
+        <div class="badge">
+            <span>📊</span> <span>Regulated Platform</span>
+        </div>
+        <div class="badge">
+            <span>🏛️</span> <span>Gold Reserve Audits</span>
+        </div>
+    </div>
+    
+    <footer class="animate__animated animate__fadeIn animate__delay-3s">
+        <p>© 2023 Golden Crypto Investment. All rights reserved.</p>
+        <p>Investing involves risk. Past performance is not indicative of future results.</p>
+    </footer>
+
+    <script>
+        // Create gold particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const particleCount = window.innerWidth < 768 ? 30 : 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                createParticle();
+            }
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.classList.add('gold-particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
+                
+                document.body.appendChild(particle);
+                
+                // Animate particles
+                animateParticle(particle);
+            }
+            
+            function animateParticle(particle) {
+                let x = parseFloat(particle.style.left);
+                let y = parseFloat(particle.style.top);
+                let xSpeed = (Math.random() - 0.5) * 0.2;
+                let ySpeed = Math.random() * 0.5 + 0.1;
+                
+                function move() {
+                    x += xSpeed;
+                    y += ySpeed;
+                    
+                    // Reset if particle goes out of view
+                    if (y > 100) {
+                        y = -5;
+                        x = Math.random() * 100;
+                    }
+                    if (x > 100 || x < 0) {
+                        xSpeed = -xSpeed;
+                    }
+                    
+                    particle.style.left = `${x}vw`;
+                    particle.style.top = `${y}vh`;
+                    
+                    requestAnimationFrame(move);
+                }
+                
+                move();
+            }
+            
+            // Add animation to button on hover
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('mouseenter', function() {
+                    this.classList.remove('animate__pulse');
+                    this.classList.add('animate__rubberBand');
+                    
+                    setTimeout(() => {
+                        this.classList.remove('animate__rubberBand');
+                        this.classList.add('animate__pulse');
+                    }, 1000);
+                });
+            }
+        });
+        
+        // Add style for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 0.7;
+                }
+                50% {
+                    opacity: 0.9;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
